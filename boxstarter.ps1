@@ -6,7 +6,7 @@ $Boxstarter.AutoLogin=$false
 # TODO: see how to improve install that by using chezmoi (choco install -y chezmoi)
 choco install -y git --params "/GitOnlyOnPath /NoShellIntegration /WindowsTerminal"
 RefreshEnv
-git clone https://github.com/TechWatching/dotfiles.git "$env:USERPROFILE\dotfiles"
+git clone https://github.com/BonkeGama/dotfiles.git "$env:USERPROFILE\dotfiles"
 # Git configuration
 Remove-Item -Path "$env:USERPROFILE\.gitconfig" -Force
 New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.gitconfig" -Target "$env:USERPROFILE\dotfiles\config\git\.gitconfig"
@@ -20,9 +20,9 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Local\Packages\M
 Set-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion\AppModelUnlock -Name AllowDevelopmentWithoutDevLicense -Value 1
 
 #--- Setting up Windows ---
-. "$env:USERPROFILE\dotfiles\scripts\FileExplorerSettings.ps1"
-. "$env:USERPROFILE\dotfiles\scripts\RemoveDefaultApps.ps1"
-. "$env:USERPROFILE\dotfiles\scripts\Tools.ps1"
+#. "$env:USERPROFILE\dotfiles\scripts\FileExplorerSettings.ps1"
+#. "$env:USERPROFILE\dotfiles\scripts\RemoveDefaultApps.ps1"
+#. "$env:USERPROFILE\dotfiles\scripts\Tools.ps1"
 . "$env:USERPROFILE\dotfiles\scripts\IDEs.ps1"
 
 # TODO: install WSL2 / Ubuntu
